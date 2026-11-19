@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TJM PARTS | MAINTENANCE — mecânica automotiva em Ribeirão Pires. Manutenção, revisão, diagnóstico e peças para veículos nacionais, importados, híbridos e elétricos.">
+  <title>TJM PARTS | MAINTENANCE — Engenharia em movimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root{--yellow:#f5c400;--black:#090a0b;--panel:#111315;--panel2:#181b1e;--white:#f5f5f2;--muted:#a5a8aa;--line:#2b2e31}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{background:var(--black);color:var(--white);font-family:Inter,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 44px));margin:auto}
+    .topline{height:4px;background:var(--yellow)}
+    header{height:82px;background:rgba(9,10,11,.94);border-bottom:1px solid #ffffff12;position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;line-height:1}
+    .brand-mark{width:42px;height:42px;border:2px solid var(--yellow);display:grid;place-items:center;color:var(--yellow);font-family:'Barlow Condensed';font-size:22px;font-weight:900;transform:skew(-8deg)}
+    .brand-name strong{display:block;font-family:'Barlow Condensed';font-size:25px;letter-spacing:1px}
+    .brand-name small{display:block;color:var(--yellow);font-size:9px;letter-spacing:3px;font-weight:800;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:30px;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .nav-links a{color:#c7c8c8;transition:.2s}
+    .nav-links a:hover{color:var(--yellow)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--yellow);color:#101010;padding:13px 19px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;transition:.2s;border:1px solid var(--yellow)}
+    .nav-cta:hover,.btn:hover{background:transparent;color:var(--yellow);transform:translateY(-2px)}
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:24px}
+    .hero{min-height:650px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(5,6,7,.98) 0%,rgba(5,6,7,.87) 48%,rgba(5,6,7,.35) 100%),url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:5px;background:var(--yellow)}
+    .hero-content{position:relative;z-index:1;max-width:700px;padding:90px 0}
+    .eyebrow{color:var(--yellow);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .eyebrow:before{content:"";width:34px;height:2px;background:var(--yellow)}
+    h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;line-height:.98}
+    h1{font-size:clamp(56px,8vw,104px);letter-spacing:-1px;margin-bottom:25px}
+    h1 span{color:var(--yellow)}
+    .hero p{color:#c5c7c8;max-width:510px;font-size:15px;margin-bottom:32px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn-outline{background:transparent;color:white;border:1px solid #777}
+    .btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+    .hero-note{margin-top:54px;display:flex;gap:34px;flex-wrap:wrap;color:#d5d5d3;font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .hero-note span{display:flex;align-items:center;gap:9px}
+    .hero-note i{color:var(--yellow)}
+    .ticker{background:var(--yellow);color:#111;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:'Barlow Condensed';font-weight:800;font-size:17px;letter-spacing:2px;text-transform:uppercase}
+    .ticker-track{display:flex;justify-content:space-around;gap:35px}
+    .ticker span{display:inline-flex;align-items:center;gap:28px}
+    .ticker i{font-size:10px}
+    section{padding:100px 0}
+    .section-head{max-width:650px;margin-bottom:48px}
+    .section-head h2{font-size:clamp(42px,5vw,62px);margin:12px 0 17px}
+    .section-head h2 span{color:var(--yellow)}
+    .section-head p{color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .about-photo{min-height:470px;position:relative;background:url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6b5a5?auto=format&fit=crop&w=1100&q=85') center/cover}
+    .about-photo:before{content:"";position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--yellow);z-index:-1}
+    .experience{position:absolute;bottom:22px;left:22px;background:var(--yellow);color:#111;padding:18px 23px}
+    .experience strong{font:800 43px 'Barlow Condensed';display:block;line-height:1}
+    .experience small{font-size:10px;text-transform:uppercase;font-weight:800;letter-spacing:1px}
+    .about-copy h2{font-size:clamp(42px,5vw,60px);margin:13px 0 22px}
+    .about-copy h2 span{color:var(--yellow)}
+    .about-copy p{color:var(--muted);font-size:14px;margin-bottom:17px}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:27px 0 30px}
+    .checks div{font-size:12px;font-weight:700;color:#e4e4e1}
+    .checks i{color:var(--yellow);margin-right:8px}
+    .services{background:#0e1011}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .service-card{background:var(--panel);border:1px solid var(--line);padding:28px 25px;min-height:220px;transition:.25s;position:relative;overflow:hidden}
+    .service-card:after{content:"";position:absolute;width:80px;height:4px;background:var(--yellow);bottom:0;left:0;transition:.25s}
+    .service-card:hover{transform:translateY(-6px);border-color:#75620b;background:#17191a}
+    .service-card:hover:after{width:100%}
+    .service-icon{width:47px;height:47px;border:1px solid #5b4d0c;color:var(--yellow);display:grid;place-items:center;font-size:19px;margin-bottom:25px}
+    .service-card h3{font-size:25px;margin-bottom:11px;letter-spacing:.5px}
+    .service-card p{font-size:12px;color:var(--muted);line-height:1.7}
+    .special{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .special-visual{min-height:390px;background:linear-gradient(0deg,rgba(0,0,0,.3),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85') center/cover;position:relative}
+    .special-visual:after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--yellow);z-index:-1}
+    .special-copy h2{font-size:clamp(42px,5vw,60px);margin:12px 0 18px}
+    .special-copy h2 span{color:var(--yellow)}
+    .special-copy p{color:var(--muted);font-size:14px;margin-bottom:25px}
+    .brands{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+    .brand-pill{border:1px solid #383b3d;padding:9px 14px;color:#e4e4e4;font-size:11px;font-weight:800;letter-spacing:1px}
+    .brand-pill:hover{border-color:var(--yellow);color:var(--yellow)}
+    .banner{padding:70px 0;background:linear-gradient(90deg,rgba(0,0,0,.93),rgba(0,0,0,.68)),url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1800&q=85') center/cover}
+    .banner-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .banner h2{font-size:clamp(38px,5vw,58px);max-width:700px}
+    .banner h2 span{color:var(--yellow)}
+    .contact{background:#0e1011}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+    .contact-copy h2{font-size:clamp(44px,5vw,62px);margin:12px 0 20px}
+    .contact-copy h2 span{color:var(--yellow)}
+    .contact-copy p{color:var(--muted);font-size:14px;max-width:450px}
+    .contact-list{margin-top:30px;display:grid;gap:17px}
+    .contact-item{display:flex;gap:15px;align-items:center}
+    .contact-item i{width:43px;height:43px;display:grid;place-items:center;background:#1c1f20;color:var(--yellow);border:1px solid #36393a}
+    .contact-item small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}
+    .contact-item strong{font-size:13px}
+    .contact-panel{background:var(--panel);border:1px solid var(--line);padding:34px}
+    .contact-panel h3{font-size:30px;margin-bottom:12px}
+    .contact-panel p{color:var(--muted);font-size:13px;margin-bottom:24px}
+    .social-link{display:flex;align-items:center;justify-content:space-between;border:1px solid #3a3d3f;padding:16px;margin-top:12px;font-size:13px;font-weight:700;transition:.2s}
+    .social-link:hover{border-color:var(--yellow);color:var(--yellow)}
+    .social-link i:first-child{color:var(--yellow);font-size:19px;margin-right:12px}
+    .map-frame{margin-top:16px;border:1px solid var(--line);height:230px;overflow:hidden}
+    .map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+    footer{border-top:1px solid var(--line);padding:27px 0;color:#85898b;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .footer-inner strong{color:#eee}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:850px){
+      .nav-links{gap:16px}.nav-links a{font-size:10px}.nav-cta{padding:11px 12px;font-size:10px}
+      .about-grid,.special,.contact-grid{grid-template-columns:1fr;gap:45px}
+      .about-photo{min-height:380px;margin-right:16px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .special-visual{order:2}
+    }
+    @media(max-width:650px){
+      header{height:72px}.menu-btn{display:block}.nav-cta{display:none}
+      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#101213;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}
+      .nav-links.open{display:flex}.nav-links a{font-size:12px}
+      .hero{min-height:620px;background-position:58% center}
+      .hero-content{padding:75px 0}.hero p{font-size:14px}
+      .hero-note{gap:15px;margin-top:40px;flex-direction:column}
+      section{padding:72px 0}
+      .service-grid{grid-template-columns:1fr}
+      .service-card{min-height:190px}
+      .checks{grid-template-columns:1fr}
+      .banner-inner{align-items:flex-start;flex-direction:column}
+      .contact-panel{padding:25px}
+      .ticker-track{justify-content:flex-start;min-width:900px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="TJM Parts início">
+        <div class="brand-mark">TJ</div>
+        <div class="brand-name"><strong>TJM PARTS</strong><small>MAINTENANCE</small></div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a><a href="#sobre">A oficina</a><a href="#servicos">Serviços</a><a href="#especialidades">Especialidades</a><a href="#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://www.instagram.com/mecanica.tj/" target="_blank" rel="noopener">Fale conosco <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow">TJM PARTS | MAINTENANCE</div>
+          <h1>ENGENHARIA<br>EM <span>MOVIMENTO.</span></h1>
+          <p>Mais do que manutenção: cuidado técnico, precisão e confiança para manter seu veículo no melhor desempenho — seja ele qual for.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#servicos">Conheça os serviços <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn btn-outline" href="https://www.instagram.com/mecanica.tj/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+          <div class="hero-note">
+            <span><i class="fa-solid fa-location-dot"></i> Ribeirão Pires — SP</span>
+            <span><i class="fa-solid fa-award"></i> Desde setembro de 2016</span>
+            <span><i class="fa-solid fa-screwdriver-wrench"></i> Tecnologia e experiência</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker"><div class="ticker-track">
+      <span>Precisão em cada detalhe <i class="fa-solid fa-gear"></i></span><span>Manutenção com confiança <i class="fa-solid fa-gear"></i></span><span>Seu veículo em boas mãos <i class="fa-solid fa-gear"></i></span><span>TJM Parts <i class="fa-solid fa-gear"></i></span>
+    </div></div>
+
+    <section id="sobre">
+      <div class="container about-grid">
+        <div class="about-photo reveal"><div class="experience"><strong>2016</strong><small>Desde setembro</small></div></div>
+        <div class="about-copy reveal">
+          <div class="eyebrow">Quem somos</div>
+          <h2>CONHECIMENTO QUE<br>MOVE <span>VOCÊ.</span></h2>
+          <p>A TJM PARTS | MAINTENANCE, também conhecida como TJ Mecânica, nasceu em setembro de 2016 com o compromisso de oferecer soluções automotivas com qualidade, responsabilidade e atenção a cada detalhe.</p>
+          <p>Atendemos diferentes categorias de veículos, unindo experiência mecânica e recursos técnicos para cuidar do que mantém você em movimento.</p>
+          <div class="checks">
+            <div><i class="fa-solid fa-check"></i> Atendimento especializado</div>
+            <div><i class="fa-solid fa-check"></i> Serviços completos</div>
+            <div><i class="fa-solid fa-check"></i> Diferentes tecnologias</div>
+            <div><i class="fa-solid fa-check"></i> Compromisso com qualidade</div>
+          </div>
+          <a class="btn" href="#contato">Entre em contato <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">O que fazemos</div>
+          <h2>SOLUÇÕES PARA<br>CADA <span>CAMINHO.</span></h2>
+          <p>Da revisão preventiva aos serviços especializados, a TJM cuida do seu veículo com atenção em cada etapa.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-car-battery"></i></div><h3>Diagnóstico e injeção</h3><p>Diagnóstico eletrônico, injeção eletrônica e manutenção dos sistemas do veículo.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-gears"></i></div><h3>Motor e câmbio</h3><p>Manutenção de motor, câmbio, correias dentadas e componentes mecânicos.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-car-side"></i></div><h3>Suspensão e freios</h3><p>Inspeção e manutenção para mais estabilidade, segurança e dirigibilidade.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-oil-can"></i></div><h3>Revisão e troca de óleo</h3><p>Revisões preventivas e troca de óleo para preservar o desempenho e a vida útil.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-bullseye"></i></div><h3>Alinhamento 3D</h3><p>Alinhamento 3D e balanceamento para uma condução mais precisa e confortável.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-bolt"></i></div><h3>Elétrica e climatização</h3><p>Manutenção elétrica, serviços de ar-condicionado e cuidados gerais.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div><h3>Borracharia</h3><p>Serviços de borracharia para auxiliar na segurança e conservação dos pneus.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Peças e acessórios</h3><p>Comércio de peças e acessórios para atender às necessidades do seu veículo.</p></article>
+          <article class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div><h3>Manutenção preventiva</h3><p>Cuidados programados para identificar necessidades e evitar problemas futuros.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidades">
+      <div class="container special">
+        <div class="special-copy reveal">
+          <div class="eyebrow">Amplo conhecimento automotivo</div>
+          <h2>UM NOVO PADRÃO<br>DE <span>CUIDADO.</span></h2>
+          <p>Atendemos veículos de diferentes categorias e tecnologias: dos modelos nacionais aos importados, passando por híbridos, elétricos, blindados, esportivos e premium.</p>
+          <strong style="font-size:11px;letter-spacing:1.5px;color:#eee;text-transform:uppercase">Algumas marcas que fazem parte do nosso universo</strong>
+          <div class="brands">
+            <span class="brand-pill">TOYOTA</span><span class="brand-pill">CHEVROLET</span><span class="brand-pill">BMW</span><span class="brand-pill">PORSCHE</span><span class="brand-pill">BYD</span><span class="brand-pill">AUDI</span><span class="brand-pill">E MUITAS OUTRAS</span>
+          </div>
+        </div>
+        <div class="special-visual reveal" role="img" aria-label="Automóvel esportivo em destaque"></div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="container banner-inner reveal">
+        <h2>SEU CARRO MERECE<br>O MELHOR <span>CUIDADO.</span></h2>
+        <a class="btn" href="https://www.instagram.com/mecanica.tj/" target="_blank" rel="noopener">Fale com a TJM <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <div class="eyebrow">Vamos conversar</div>
+          <h2>CONTE COM A<br><span>TJM PARTS.</span></h2>
+          <p>Precisa de uma avaliação ou quer saber mais sobre nossos serviços? Entre em contato com a equipe da TJM.</p>
+          <div class="contact-list">
+            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><small>Endereço</small><strong>Av. Papa João XXIII, 42 — Centro Alto</strong><br><span style="color:var(--muted);font-size:12px">Ribeirão Pires — SP, 09421-540</span><br><a href="https://www.google.com/maps/search/?api=1&query=Av.+Papa+Jo%C3%A3o+XXIII,+42,+Centro+Alto,+Ribeir%C3%A3o+Pires,+SP,+09421-540" target="_blank" rel="noopener" style="display:inline-block;color:var(--yellow);font-size:11px;font-weight:800;margin-top:7px;text-transform:uppercase;letter-spacing:.7px">Ver no Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+            <div class="contact-item"><i class="fa-solid fa-calendar-check"></i><div><small>Experiência</small><strong>Desde setembro de 2016</strong></div></div>
+            <div class="contact-item"><i class="fa-brands fa-instagram"></i><div><small>Instagram</small><strong>@mecanica.tj</strong></div></div>
+          </div>
+        </div>
+        <div class="contact-panel reveal">
+          <h3>FALE COM A GENTE.</h3>
+          <p>Acompanhe nosso trabalho e envie uma mensagem pelo Instagram para consultar serviços e solicitar informações.</p>
+          <a class="social-link" href="https://www.instagram.com/mecanica.tj/" target="_blank" rel="noopener"><span><i class="fa-brands fa-instagram"></i> @mecanica.tj</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a class="social-link" href="https://www.google.com/maps/search/?api=1&query=Av.+Papa+Jo%C3%A3o+XXIII%2C+42%2C+Centro+Alto%2C+Ribeir%C3%A3o+Pires%2C+SP%2C+09421-540" target="_blank" rel="noopener"><span><i class="fa-solid fa-map-location-dot"></i> Como chegar</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="map-frame">
+            <iframe title="Localização da TJM Parts em Ribeirão Pires" src="https://www.google.com/maps?q=Av.+Papa+Jo%C3%A3o+XXIII%2C+42%2C+Centro+Alto%2C+Ribeir%C3%A3o+Pires%2C+SP%2C+09421-540&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="reveal" style="grid-column:1/-1;margin-top:8px;border:1px solid var(--line);background:var(--panel);padding:10px">
+          <iframe
+            title="Localização da TJM PARTS no Google Maps"
+            src="https://www.google.com/maps?q=Av.+Papa+Jo%C3%A3o+XXIII,+42,+Centro+Alto,+Ribeir%C3%A3o+Pires,+SP,+09421-540&output=embed"
+            width="100%" height="320" style="border:0;display:block;filter:grayscale(1) contrast(1.05)"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>TJM PARTS | MAINTENANCE</strong> — Engenharia em movimento.</div>
+      <div>© <span id="year"></span> TJM PARTS. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
